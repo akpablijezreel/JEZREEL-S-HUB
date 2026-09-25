@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JEZREEL'S HUB - by AKP-TECH-SOLUTIONS</title>
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',Arial}
+:root{--bg:#070707;--card:#111;--text:#fff;--accent:#FFD700;--border:#222}
+body.normal{--bg:#fcfcfc;--card:#fff;--text:#111;--accent:#6c2eb5;--border:#eee}
+body{background:var(--bg);color:var(--text);transition:.3s}
+header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--border);padding:12px 18px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.logo{font-weight:900;font-size:18px;letter-spacing:1px}.logo b{color:var(--accent)}
+.search{display:flex;flex:1;max-width:450px;background:var(--card);border:1px solid var(--border);border-radius:30px;overflow:hidden}
+.search input{flex:1;background:transparent;border:none;padding:12px 16px;color:var(--text);outline:none}
+.search button{background:var(--accent);border:none;padding:12px 18px;font-weight:900;cursor:pointer;color:#000}
+body.normal.search button{color:#fff}
+.btn{padding:10px 18px;border-radius:25px;border:1px solid var(--border);background:var(--card);color:var(--text);font-weight:700;cursor:pointer}
+.btn.gold{background:var(--accent);color:#000;border-color:var(--accent)}
+.top-bar{text-align:center;padding:10px;font-weight:900;font-size:12px;letter-spacing:1px}
+body.blackfriday.top-bar{background:linear-gradient(90deg,#FFD700,#FFA500);color:#000}
+body.normal.top-bar{background:#6c2eb5;color:#fff}
+.hero{text-align:center;padding:55px 20px}
+.hero h1{font-size:clamp(2.2rem,7vw,3.8rem);font-weight:900;line-height:.95}
+.hero h1 i{color:#FFD700} body.normal.hero h1 i{color:#6c2eb5}
+.timer{display:flex;justify-content:center;gap:10px;margin-top:18px}
+.time-box{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:10px 14px;min-width:65px;text-align:center}
+.time-box b{display:block;font-size:1.3rem;color:var(--accent)}
+.cats{display:flex;gap:8px;overflow-x:auto;padding:12px 18px}
+.cats button{padding:8px 16px;border-radius:20px;border:1px solid var(--border);background:var(--card);color:var(--text);font-weight:700;white-space:nowrap;font-size:12px}
+.cats button.active{background:var(--accent);color:#000}
+body.normal.cats button.active{color:#fff}
+.grid{max-width:1400px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px}
+@media(min-width:900px){.grid{grid-template-columns:repeat(4,1fr);gap:16px;padding:16px}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;position:relative}
+.badge{position:absolute;top:8px;left:8px;background:#ff0000;color:#fff;font-size:10px;font-weight:900;padding:4px 8px;border-radius:12px;z-index:2}
+.badge.hide{display:none}
+.card img{width:100%;height:185px;object-fit:cover;background:#0a0a0a}
+.info{padding:12px}.info h3{font-size:12px;height:34px;overflow:hidden;line-height:1.3}
+.now{font-weight:900;color:var(--accent)}.old{text-decoration:line-through;color:#777;font-size:11px;margin-left:5px}
+.card button{width:100%;margin-top:8px;padding:10px;border:none;border-radius:10px;background:var(--text);color:var(--bg);font-weight:900;cursor:pointer;font-size:12px}
+#overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:90}#overlay.show{display:block}
+#cartBox,#adminBox{display:none;position:fixed;top:0;right:0;width:95%;max-width:400px;height:100%;background:var(--bg);border-left:1px solid var(--border);z-index:100;padding:20px;overflow-y:auto}
+#cartBox.show,#adminBox.show{display:block}
+.inp{width:100%;padding:11px;margin:5px 0;background:var(--card);border:1px solid var(--border);border-radius:8px;color:var(--text)}
+</style>
+</head>
+<body id="body">
+
+<div class="top-bar" id="topBar"></div>
+
+<header>
+<div class="logo">JEZREEL'S <b>HUB</b></div>
+<div class="search"><input id="search" placeholder="Search in Jezreel's Hub..." oninput="render()"><button onclick="render()">SEARCH</button></div>
+<div style="display:flex;gap:8px">
+<button class="btn" onclick="openBox('adminBox')">ADMIN</button>
+<button class="btn gold" onclick="openBox('cartBox')">CART (<span id="count">0</span>)</button>
+</div>
+</header>
+
+<div class="hero">
+<h1 id="heroTitle"></h1>
+<p id="heroSub" style="color:#888;margin-top:10px;font-size:13px;letter-spacing:1px"></p>
+<div class="timer" id="timer"></div>
+</div>
+
+<div class="cats" id="cats"></div>
+<div class="grid" id="grid"></div>
+
+<div id="overlay" onclick="closeAll()"></div>
+
+<div id="cartBox">
+<h3 style="display:flex;justify-content:space-between">Your Bag <span onclick="closeAll()" style="cursor:pointer">✕</span></h3>
+<div id="cartList" style="margin-top:12px"></div>
+<h3 style="margin-top:14px">Total: GH₵ <span id="total">0</span></h3>
+<small id="saveText" style="color:#00c853"></small>
+<input id="email" class="inp" placeholder="Email for receipt">
+<button class="btn gold" style="width:100%;margin-top:10px;padding:14px" onclick="pay()">PAY WITH PAYSTACK</button>
+<button class="btn" style="width:100%;margin-top:8px;padding:14px;background:#25D366;color:#fff;border:none" onclick="orderWA()">ORDER ON WHATSAPP</button>
+</div>
+
+<div id="adminBox">
+<h3 style="display:flex;justify-content:space-between">Admin - Jezreel's Hub <span onclick="closeAll()" style="cursor:pointer">✕</span></h3>
+<input id="pName" class="inp" placeholder="Product Name">
+<input id="pPrice" type="number" class="inp" placeholder="Price GH₵">
+<input id="pDisc" type="number" class="inp" placeholder="Discount % (Friday only)">
+<input id="pCat" class="inp" placeholder="Category">
+<input id="pImg" class="inp" placeholder="Image URL">
+<button class="btn gold" style="width:100%;padding:12px" onclick="addProd()">ADD PRODUCT</button>
+<button class="btn" style="width:100%;margin-top:6px" onclick="reset()">RESET STOCK</button>
+<div id="adminList" style="margin-top:12px"></div>
+</div>
+
+<footer style="background:#0a0a0a;border-top:1px solid #222;padding:45px 20px;text-align:center;margin-top:60px">
+  <div style="font-weight:900;font-size:24px;letter-spacing:2px;color:#fff">JEZREEL'S <span style="color:#FFD700">HUB</span></div>
+  <div style="color:#6c2eb5;font-weight:800;font-size:11px;letter-spacing:3px;margin-top:4px">BY AKP-TECH-SOLUTIONS</div>
+  <p style="color:#888;font-size:12px;max-width:650px;margin:14px auto;line-height:1.7">
+    JEZREEL'S HUB is a premium lifestyle & tech store powered by AKP-TECH-SOLUTIONS.<br>
+    God will make you fruitful — Jezreel means "God sows". Every Friday = Black Friday (Up to 70% OFF). Mon-Thu = Normal Prices.
+  </p>
+  <div style="margin:16px 0;display:flex;justify-content:center;gap:15px;flex-wrap:wrap">
+    <span style="color:#555;font-size:11px">📍 Accra, Ghana</span>
+    <span style="color:#555;font-size:11px">💳 Paystack Secured</span>
+    <span style="color:#555;font-size:11px">🚚 Pay on Delivery</span>
+  </div>
+  <p style="color:#444;font-size:11px;margin-top:18px;line-height:1.6">
+    © <span id="year"></span> JEZREEL'S HUB • A product of AKP-TECH-SOLUTIONS<br>
+    All Rights Reserved • Made in Ghana 🇬🇭<br>
+    <span id="modeText" style="color:#FFD700;font-weight:700"></span>
+  </p>
+</footer>
+
+<script>
+// AUTOMATION - ALREADY INSIDE
+const today = new Date();
+const day = today.getDay(); // 5 = Friday
+const isFriday = day === 5;
+const dayName = ["SUNDAY","MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY"][day];
+const body = document.getElementById('body');
+if(isFriday){
+body.className='blackfriday';
+document.getElementById('topBar').innerHTML=`🔥 TODAY IS FRIDAY - BLACK FRIDAY LIVE AT JEZREEL'S HUB - UP TO 70% OFF - BY AKP-TECH-SOLUTIONS 🔥`;
+document.getElementById('heroTitle').innerHTML=`JEZREEL'S <i>HUB</i><br>BLACK FRIDAY`;
+document.getElementById('heroSub').innerHTML=`FRIDAY ONLY • POWERED BY AKP-TECH-SOLUTIONS • FREE DELIVERY IN ACCRA`;
+}else{
+body.className='normal';
+document.getElementById('topBar').innerHTML=`✨ HAPPY ${dayName} - WELCOME TO JEZREEL'S HUB - BY AKP-TECH-SOLUTIONS ✨`;
+document.getElementById('heroTitle').innerHTML=`JEZREEL'S <i>HUB</i><br>${dayName} STORE`;
+document.getElementById('heroSub').innerHTML=`TODAY IS ${dayName} • CURATED BY AKP-TECH-SOLUTIONS • NEW DROPS`;
+}
+document.getElementById('year').innerText=new Date().getFullYear();
+document.getElementById('modeText').innerText=isFriday?`🔥 BLACK FRIDAY MODE - DISCOUNTS LIVE AT JEZREEL'S HUB`:`✨ ${dayName} MODE - JEZREEL'S HUB - NORMAL PRICES`;
+
+const stock = [
+{name:"Nike Air Max Triple Black",price:850,disc:50,cat:"shoes",img:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500"},
+{name:"iPhone 15 Pro Max 256GB",price:16800,disc:30,cat:"phones",img:"https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=500"},
+{name:"HP EliteBook - Tech Deal",price:5200,disc:40,cat:"electronics",img:"https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500"},
+{name:"MacBook Pro M3 14-inch",price:18500,disc:25,cat:"electronics",img:"https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=500"},
+{name:"Samsung S24 Ultra",price:11200,disc:35,cat:"phones",img:"https://images.unsplash.com/photo-1610945264803-c22b62d2a7b3?w=500"},
+{name:"Designer Sneakers - Jezreel Pick",price:950,disc:45,cat:"shoes",img:"https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=500"},
+{name:"LV Style Handbag",price:850,disc:55,cat:"fashion",img:"https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500"},
+{name:"AirPods Pro 2nd Gen",price:1800,disc:40,cat:"electronics",img:"https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=500"}
+];
+let products = JSON.parse(localStorage.getItem('jez_products')||JSON.stringify(stock)).map((p,i)=>({...p,id:i+1}));
+let cart = JSON.parse(localStorage.getItem('jez_cart')||'[]');
+let active='all';
+let cats=['all','shoes','phones','fashion','electronics'];
+function initCats(){document.getElementById('cats').innerHTML=cats.map(c=>`<button class="${active===c?'active':''}" onclick="setCat('${c}')">${c.toUpperCase()}</button>`).join('');}
+function setCat(c){active=c;initCats();render();}
+function getFiltered(){let q=document.getElementById('search').value.toLowerCase(); return products.filter(p=>(active==='all'||p.cat===active)&&p.name.toLowerCase().includes(q));}
+function nowPrice(p){return isFriday?Math.round(p.price*(1-p.disc/100)):p.price;}
+function render(){
+let list=getFiltered();
+document.getElementById('grid').innerHTML=list.map(p=>{
+let np=nowPrice(p);
+return `<div class="card"><span class="badge ${!isFriday?'hide':''}">-${p.disc}%</span><img src="${p.img}"><div class="info"><h3>${p.name}</h3><div><span class="now">GH₵${np}</span>${isFriday?`<span class="old">GH₵${p.price}</span>`:''}</div><button onclick="addCart(${p.id})">${isFriday?'GRAB DEAL':'ADD TO BAG'}</button></div></div>`;
+}).join(''); updateAdmin();
+}
+function addCart(id){let ex=cart.find(c=>c.id===id); if(ex) ex.qty++; else{let pr=products.find(p=>p.id===id); cart.push({id:pr.id,name:pr.name,price:nowPrice(pr),orig:pr.price,qty:1,img:pr.img});} save(); openBox('cartBox');}
+function save(){localStorage.setItem('jez_products',JSON.stringify(products)); localStorage.setItem('jez_cart',JSON.stringify(cart)); updateCart();}
+function updateCart(){let c=0,t=0,html=""; cart.forEach(it=>{c+=it.qty; t+=it.price*it.qty; html+=`<div style="display:flex;gap:10px;margin:10px 0;border-bottom:1px solid #222;padding-bottom:8px"><img src="${it.img}" style="width:50px;height:50px;border-radius:8px"><div><b style="font-size:12px">${it.name}</b><br>GH₵${it.price} x ${it.qty} <span style="color:red;cursor:pointer" onclick="del(${it.id})"> Remove</span></div></div>`}); document.getElementById('count').innerText=c; document.getElementById('total').innerText=t; document.getElementById('cartList').innerHTML=html||"Empty bag"; }
+function del(id){cart=cart.filter(c=>c.id!==id); save();}
+function openBox(id){document.getElementById(id).classList.add('show');document.getElementById('overlay').classList.add('show');}
+function closeAll(){document.querySelectorAll('#cartBox,#adminBox').forEach(e=>e.classList.remove('show'));document.getElementById('overlay').classList.remove('show');}
+function addProd(){let n=document.getElementById('pName').value, pr=parseFloat(document.getElementById('pPrice').value), dc=parseFloat(document.getElementById('pDisc').value)||40, cat=document.getElementById('pCat').value||'general', img=document.getElementById('pImg').value||'https://via.placeholder.com/400'; if(!n||!pr) return alert('Need name & price'); products.unshift({id:Date.now(),name:n,price:pr,disc:dc,cat:cat.toLowerCase(),img:img}); save(); render();}
+function reset(){if(!confirm('Reset?'))return; products=stock.map((p,i)=>({...p,id:i+1})); save(); render();}
+function updateAdmin(){document.getElementById('adminList').innerHTML=products.map(p=>`<div style="display:flex;justify-content:space-between;font-size:12px;padding:6px 0;border-bottom:1px solid #222"><span>${p.name}</span><span style="color:red;cursor:pointer" onclick="delProd(${p.id})">X</span></div>`).join('');}
+function delProd(id){products=products.filter(p=>p.id!==id); save(); render();}
+function orderWA(){if(!cart.length) return alert('Empty'); let msg=`JEZREEL'S HUB Order ${dayName} - by AKP-TECH:%0A`+cart.map(c=>`- ${c.name} x${c.qty}=GH₵${c.price*c.qty}`).join('%0A')+`%0ATotal GH₵${document.getElementById('total').innerText}`; window.open(`https://wa.me/233000000000?text=${msg}`,'_blank');}
+function pay(){if(!cart.length) return alert('Empty'); let email=document.getElementById('email').value; if(!email) return alert('Email needed'); let total=parseFloat(document.getElementById('total').innerText); let h=PaystackPop.setup({key:'pk_test_xxxx',email:email,amount:total*100,currency:'GHS',ref:'JEZREEL'+Date.now(),callback:function(r){alert('Success '+r.reference);cart=[];save();closeAll();},onClose:function(){}}); h.openIframe();}
+function startTimer(){
+if(!isFriday){document.getElementById('timer').innerHTML=`<div class="time-box"><b>${dayName}</b><span>NORMAL DAY</span></div>`; return;}
+let end=new Date(); end.setHours(23,59,59,999);
+setInterval(()=>{let diff=end-new Date(); let h=Math.floor(diff/3600000), m=Math.floor(diff%3600000/60000), s=Math.floor(diff%60000/1000); document.getElementById('timer').innerHTML=`<div class="time-box"><b>${h.toString().padStart(2,'0')}</b><span>HRS</span></div><div class="time-box"><b>${m.toString().padStart(2,'0')}</b><span>MIN</span></div><div class="time-box"><b>${s.toString().padStart(2,'0')}</b><span>SEC</span></div>`;},1000);
+}
+initCats(); render(); updateCart(); startTimer();
+</script>
+</body>
+  </html>
