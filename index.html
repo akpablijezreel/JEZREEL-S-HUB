@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>JEZREEL'S HUB - AI Store by AKP-TECH | Ghana</title>
+<title>JEZREEL'S HUB - PREMIUM Store by AKP-TECH | Ghana</title>
 <script src="https://js.paystack.co/v1/inline.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800;900&display=swap" rel="stylesheet">
 <style>
@@ -181,7 +181,13 @@ function addCart(id){let ex=cart.find(c=>c.id===id);if(ex)ex.qty++;else{let pr=p
 function save(){localStorage.setItem('jez_v5_FINAL',JSON.stringify(products));localStorage.setItem('jez_cart_v5',JSON.stringify(cart));localStorage.setItem('jez_wallet_v5',wallet);localStorage.setItem('jez_points_v5',points);localStorage.setItem('jez_orders_v5',JSON.stringify(orders));updateCart();}
 function updateCart(){let c=0,t=0,html="";cart.forEach(it=>{c+=it.qty;t+=it.price*it.qty;html+=`<div style="display:flex;gap:8px;margin:8px 0;border-bottom:1px solid #222;padding-bottom:6px"><img src="${it.img}" style="width:44px;height:44px;border-radius:6px"><div><b style="font-size:11px">${it.name}</b><br>GH₵${it.price} x ${it.qty} <span style="color:red;cursor:pointer" onclick="del(${it.id})"> Remove</span></div></div>`});let useW=document.getElementById('useWallet')?.checked;let finalTotal=useW?Math.max(0,t-wallet):t;document.getElementById('count').innerText=c;document.getElementById('total').innerText=finalTotal;document.getElementById('cartList').innerHTML=html||"Empty - AI is watching";document.querySelectorAll('.wBal').forEach(e=>e.innerText=wallet);updateWalletUI();}
 function del(id){cart=cart.filter(c=>c.id!==id);save();}
-function openBox(id){document.getElementById(id).classList.add('show');document.getElementById('overlay').classList.add('show');}
+function openBox(id){
+  if(id==='adminBox'){
+    let pass=prompt('Enter Admin Password:');
+    if(pass!=='jezreel123'){alert('Wrong password!');return;}
+  }
+  document.getElementById(id).classList.add('show');document.getElementById('overlay').classList.add('show');
+}
 function closeAll(){document.querySelectorAll('#cartBox,#adminBox,#trackBox,#walletBox,#popup').forEach(e=>e.classList.remove('show'));document.getElementById('overlay').classList.remove('show');document.getElementById('suggest').style.display='none';}
 function addProd(){let n=document.getElementById('pName').value,pr=parseFloat(document.getElementById('pPrice').value),dc=parseFloat(document.getElementById('pDisc').value)||40,cat=document.getElementById('pCat').value||'general',img=document.getElementById('pImg').value||'https://via.placeholder.com/400';if(!n||!pr)return alert('Need name & price');products.unshift({id:Date.now(),name:n,price:pr,disc:dc,cat:cat.toLowerCase(),img:img});save();render();}
 function updateAdmin(){document.getElementById('adminList').innerHTML=products.map(p=>`<div style="display:flex;justify-content:space-between;font-size:11px;padding:5px 0;border-bottom:1px solid #222"><span>${p.name.slice(0,24)}</span><span style="color:red;cursor:pointer" onclick="delProd(${p.id})">X</span></div>`).join('');}
