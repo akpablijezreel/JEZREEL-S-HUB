@@ -1,181 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>JEZREEL'S HUB - by AKP-TECH-SOLUTIONS</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JEZREEL'S HUB - By AKP-TECH-SOLUTIONS | 100+ Products | Black Friday Every Friday</title>
+<meta name="description" content="JEZREEL'S HUB by AKP-TECH-SOLUTIONS - Ghana's biggest online store with 100+ products. Every Friday 70% OFF. MTN MoMo, Paystack, Pay on Delivery.">
 <script src="https://js.paystack.co/v1/inline.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',Arial}
-:root{--bg:#070707;--card:#111;--text:#fff;--accent:#FFD700;--border:#222}
-body.normal{--bg:#fcfcfc;--card:#fff;--text:#111;--accent:#6c2eb5;--border:#eee}
+:root{--bg:#070707;--card:#121212;--text:#fff;--accent:#FFD700;--border:#222}
+body.normal{--bg:#f8f8f8;--card:#fff;--text:#111;--accent:#6c2eb5;--border:#e5e5e5}
 body{background:var(--bg);color:var(--text);transition:.3s}
-header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--border);padding:12px 18px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
-.logo{font-weight:900;font-size:18px;letter-spacing:1px}.logo b{color:var(--accent)}
+header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--border);padding:10px 12px}
+.hrow{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.logo{font-weight:900;font-size:20px;letter-spacing:1px}.logo b{color:var(--accent)}
 .search{display:flex;flex:1;max-width:450px;background:var(--card);border:1px solid var(--border);border-radius:30px;overflow:hidden}
-.search input{flex:1;background:transparent;border:none;padding:12px 16px;color:var(--text);outline:none}
-.search button{background:var(--accent);border:none;padding:12px 18px;font-weight:900;cursor:pointer;color:#000}
-body.normal.search button{color:#fff}
-.btn{padding:10px 18px;border-radius:25px;border:1px solid var(--border);background:var(--card);color:var(--text);font-weight:700;cursor:pointer}
-.btn.gold{background:var(--accent);color:#000;border-color:var(--accent)}
-.top-bar{text-align:center;padding:10px;font-weight:900;font-size:12px;letter-spacing:1px}
+.search input{flex:1;background:transparent;border:none;padding:11px 14px;color:var(--text);outline:none;font-size:12px}
+.search button{background:var(--accent);border:none;padding:11px 16px;font-weight:900;cursor:pointer;color:#000}
+.nav{display:flex;gap:6px;overflow-x:auto;padding:10px 0}
+.nav a{font-size:10px;font-weight:800;text-decoration:none;color:var(--text);border:1px solid var(--border);padding:7px 12px;border-radius:20px;background:var(--card);white-space:nowrap}
+.nav a.active{background:var(--accent);color:#000}
+.top-bar{text-align:center;padding:9px;font-weight:900;font-size:11px;letter-spacing:.5px}
 body.blackfriday.top-bar{background:linear-gradient(90deg,#FFD700,#FFA500);color:#000}
 body.normal.top-bar{background:#6c2eb5;color:#fff}
-.hero{text-align:center;padding:55px 20px}
-.hero h1{font-size:clamp(2.2rem,7vw,3.8rem);font-weight:900;line-height:.95}
-.hero h1 i{color:#FFD700} body.normal.hero h1 i{color:#6c2eb5}
-.timer{display:flex;justify-content:center;gap:10px;margin-top:18px}
-.time-box{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:10px 14px;min-width:65px;text-align:center}
-.time-box b{display:block;font-size:1.3rem;color:var(--accent)}
-.cats{display:flex;gap:8px;overflow-x:auto;padding:12px 18px}
-.cats button{padding:8px 16px;border-radius:20px;border:1px solid var(--border);background:var(--card);color:var(--text);font-weight:700;white-space:nowrap;font-size:12px}
+.hero{text-align:center;padding:40px 16px}
+.hero h1{font-size:clamp(2rem,7vw,3.6rem);font-weight:900;line-height:.9}
+.hero h1 i{color:var(--accent)}
+.timer{display:flex;justify-content:center;gap:8px;margin-top:16px;flex-wrap:wrap}
+.time-box{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:8px 12px;min-width:65px}
+.time-box b{display:block;color:var(--accent);font-size:1.2rem}
+.cats{display:flex;gap:6px;overflow-x:auto;padding:10px 12px;position:sticky;top:98px;background:var(--bg);z-index:40}
+.cats button{padding:8px 14px;border-radius:20px;border:1px solid var(--border);background:var(--card);color:var(--text);font-weight:800;font-size:11px;white-space:nowrap}
 .cats button.active{background:var(--accent);color:#000}
-body.normal.cats button.active{color:#fff}
-.grid{max-width:1400px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px}
-@media(min-width:900px){.grid{grid-template-columns:repeat(4,1fr);gap:16px;padding:16px}}
-.card{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;position:relative}
-.badge{position:absolute;top:8px;left:8px;background:#ff0000;color:#fff;font-size:10px;font-weight:900;padding:4px 8px;border-radius:12px;z-index:2}
+.grid{max-width:1450px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:9px;padding:9px}
+@media(min-width:700px){.grid{grid-template-columns:repeat(3,1fr)}}@media(min-width:1100px){.grid{grid-template-columns:repeat(4,1fr)}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;position:relative}
+.badge{position:absolute;top:6px;left:6px;background:red;color:#fff;font-size:9px;font-weight:900;padding:4px 7px;border-radius:10px;z-index:2}
 .badge.hide{display:none}
-.card img{width:100%;height:185px;object-fit:cover;background:#0a0a0a}
-.info{padding:12px}.info h3{font-size:12px;height:34px;overflow:hidden;line-height:1.3}
-.now{font-weight:900;color:var(--accent)}.old{text-decoration:line-through;color:#777;font-size:11px;margin-left:5px}
-.card button{width:100%;margin-top:8px;padding:10px;border:none;border-radius:10px;background:var(--text);color:var(--bg);font-weight:900;cursor:pointer;font-size:12px}
-#overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:90}#overlay.show{display:block}
-#cartBox,#adminBox{display:none;position:fixed;top:0;right:0;width:95%;max-width:400px;height:100%;background:var(--bg);border-left:1px solid var(--border);z-index:100;padding:20px;overflow-y:auto}
-#cartBox.show,#adminBox.show{display:block}
-.inp{width:100%;padding:11px;margin:5px 0;background:var(--card);border:1px solid var(--border);border-radius:8px;color:var(--text)}
+.card img{width:100%;height:170px;object-fit:cover;background:#0a0a0a}
+.info{padding:10px}.info h3{font-size:11px;height:30px;overflow:hidden;line-height:1.3}
+.now{font-weight:900;color:var(--accent);font-size:13px}.old{text-decoration:line-through;color:#777;font-size:10px;margin-left:4px}
+.card button{width:100%;margin-top:6px;padding:9px;border:none;border-radius:9px;background:var(--text);color:var(--bg);font-weight:900;cursor:pointer;font-size:11px}
+.section{max-width:1100px;margin:50px auto;padding:28px 16px;border-top:1px solid var(--border)}
+.btn{padding:9px 14px;border-radius:20px;border:1px solid var(--border);background:var(--card);color:var(--text);font-weight:700;cursor:pointer;font-size:11px}.btn.gold{background:var(--accent);color:#000}
+#overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:90}#overlay.show{display:block}
+#cartBox,#adminBox{display:none;position:fixed;top:0;right:0;width:95%;max-width:420px;height:100%;background:var(--bg);border-left:1px solid var(--border);z-index:100;padding:18px;overflow-y:auto}#cartBox.show,#adminBox.show,#popup.show{display:block}
+.inp{width:100%;padding:11px;margin:5px 0;background:var(--card);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:12px}
+#popup{display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:92%;max-width:380px;background:var(--card);border:2px solid var(--accent);border-radius:18px;z-index:200;padding:22px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.5)}
 </style>
 </head>
 <body id="body">
-
 <div class="top-bar" id="topBar"></div>
-
 <header>
+<div class="hrow">
 <div class="logo">JEZREEL'S <b>HUB</b></div>
-<div class="search"><input id="search" placeholder="Search in Jezreel's Hub..." oninput="render()"><button onclick="render()">SEARCH</button></div>
-<div style="display:flex;gap:8px">
-<button class="btn" onclick="openBox('adminBox')">ADMIN</button>
-<button class="btn gold" onclick="openBox('cartBox')">CART (<span id="count">0</span>)</button>
+<div class="search"><input id="search" placeholder="Search 100+ products..." oninput="render()"><button onclick="render()">SEARCH</button></div>
+<div style="display:flex;gap:6px"><button class="btn" onclick="openBox('adminBox')">ADMIN</button><button class="btn gold" onclick="openBox('cartBox')">CART (<span id="count">0</span>)</button></div>
+</div>
+<div class="nav">
+<a href="#" class="active">HOME</a><a href="#grid">SHOP</a><a href="#about">ABOUT US</a><a href="#cats">CATEGORIES</a><a href="#payment">PAYMENT</a><a href="#contact">CONTACT</a>
 </div>
 </header>
 
 <div class="hero">
 <h1 id="heroTitle"></h1>
-<p id="heroSub" style="color:#888;margin-top:10px;font-size:13px;letter-spacing:1px"></p>
+<p id="heroSub" style="color:#888;margin-top:8px;font-size:12px"></p>
 <div class="timer" id="timer"></div>
+<p id="prodCount" style="margin-top:10px;font-size:11px;color:#888;font-weight:800"></p>
 </div>
 
 <div class="cats" id="cats"></div>
 <div class="grid" id="grid"></div>
 
+<div class="section" id="about"><h2>ABOUT JEZREEL'S HUB</h2><p style="color:#888;font-size:13px;line-height:1.8;margin-top:8px"><b>JEZREEL'S HUB by AKP-TECH-SOLUTIONS</b> — Ghana's premium hub with 100+ products. Jezreel = "God Sows". Every FRIDAY = Black Friday up to 70% OFF. Mon-Thu = normal prices. We deliver Accra & all regions. Pay via MTN MoMo, Card, or Pay on Delivery.</p></div>
+<div class="section" id="payment"><h2>PAYMENT METHODS 💳</h2><p style="color:#888;font-size:12px;margin-top:8px">✅ MTN MoMo ✅ Vodafone Cash ✅ AirtelTigo Money ✅ Visa/Mastercard ✅ Bank Transfer ✅ Pay on Delivery (Accra)</p><p style="color:#888;font-size:11px;margin-top:8px">Powered by Paystack Ghana. Email receipt auto sent.</p></div>
+<div class="section" id="contact"><h2>CONTACT US</h2><p style="color:#888;font-size:12px;margin-top:8px">📧 Email: jezreelshub@gmail.com<br>📱 WhatsApp: +233 00 000 0000<br>📍 Accra, Ghana<br>Powered by AKP-TECH-SOLUTIONS</p><button class="btn gold" style="margin-top:12px" onclick="orderWA()">CHAT ON WHATSAPP</button></div>
+
 <div id="overlay" onclick="closeAll()"></div>
 
 <div id="cartBox">
 <h3 style="display:flex;justify-content:space-between">Your Bag <span onclick="closeAll()" style="cursor:pointer">✕</span></h3>
-<div id="cartList" style="margin-top:12px"></div>
-<h3 style="margin-top:14px">Total: GH₵ <span id="total">0</span></h3>
-<small id="saveText" style="color:#00c853"></small>
-<input id="email" class="inp" placeholder="Email for receipt">
-<button class="btn gold" style="width:100%;margin-top:10px;padding:14px" onclick="pay()">PAY WITH PAYSTACK</button>
+<div id="cartList" style="margin-top:10px"></div>
+<h3 style="margin-top:12px">Total: GH₵ <span id="total">0</span></h3>
+<input id="email" class="inp" placeholder="Email for receipt *">
+<input id="momo" class="inp" placeholder="MoMo Number (for MoMo payment)">
+<button class="btn gold" style="width:100%;margin-top:10px;padding:14px" onclick="pay()">PAY - CARD / MTN MOMO</button>
 <button class="btn" style="width:100%;margin-top:8px;padding:14px;background:#25D366;color:#fff;border:none" onclick="orderWA()">ORDER ON WHATSAPP</button>
 </div>
 
 <div id="adminBox">
-<h3 style="display:flex;justify-content:space-between">Admin - Jezreel's Hub <span onclick="closeAll()" style="cursor:pointer">✕</span></h3>
-<input id="pName" class="inp" placeholder="Product Name">
-<input id="pPrice" type="number" class="inp" placeholder="Price GH₵">
-<input id="pDisc" type="number" class="inp" placeholder="Discount % (Friday only)">
-<input id="pCat" class="inp" placeholder="Category">
-<input id="pImg" class="inp" placeholder="Image URL">
-<button class="btn gold" style="width:100%;padding:12px" onclick="addProd()">ADD PRODUCT</button>
-<button class="btn" style="width:100%;margin-top:6px" onclick="reset()">RESET STOCK</button>
-<div id="adminList" style="margin-top:12px"></div>
+<h3 style="display:flex;justify-content:space-between">Admin - Add Product <span onclick="closeAll()" style="cursor:pointer">✕</span></h3>
+<input id="pName" class="inp" placeholder="Product Name"><input id="pPrice" type="number" class="inp" placeholder="Price GH₵"><input id="pDisc" type="number" class="inp" placeholder="Discount % Friday"><input id="pCat" class="inp" placeholder="Category: shoes/phones/fashion/electronics/watches/bags/accessories/home"><input id="pImg" class="inp" placeholder="Image URL"><button class="btn gold" style="width:100%;padding:12px" onclick="addProd()">ADD PRODUCT</button><button class="btn" style="width:100%;margin-top:6px" onclick="reset()">RESET TO 65 PRODUCTS</button><div id="adminList" style="margin-top:10px"></div>
 </div>
 
-<footer style="background:#0a0a0a;border-top:1px solid #222;padding:45px 20px;text-align:center;margin-top:60px">
-  <div style="font-weight:900;font-size:24px;letter-spacing:2px;color:#fff">JEZREEL'S <span style="color:#FFD700">HUB</span></div>
-  <div style="color:#6c2eb5;font-weight:800;font-size:11px;letter-spacing:3px;margin-top:4px">BY AKP-TECH-SOLUTIONS</div>
-  <p style="color:#888;font-size:12px;max-width:650px;margin:14px auto;line-height:1.7">
-    JEZREEL'S HUB is a premium lifestyle & tech store powered by AKP-TECH-SOLUTIONS.<br>
-    God will make you fruitful — Jezreel means "God sows". Every Friday = Black Friday (Up to 70% OFF). Mon-Thu = Normal Prices.
-  </p>
-  <div style="margin:16px 0;display:flex;justify-content:center;gap:15px;flex-wrap:wrap">
-    <span style="color:#555;font-size:11px">📍 Accra, Ghana</span>
-    <span style="color:#555;font-size:11px">💳 Paystack Secured</span>
-    <span style="color:#555;font-size:11px">🚚 Pay on Delivery</span>
-  </div>
-  <p style="color:#444;font-size:11px;margin-top:18px;line-height:1.6">
-    © <span id="year"></span> JEZREEL'S HUB • A product of AKP-TECH-SOLUTIONS<br>
-    All Rights Reserved • Made in Ghana 🇬🇭<br>
-    <span id="modeText" style="color:#FFD700;font-weight:700"></span>
-  </p>
-</footer>
+<div id="popup">
+<span onclick="closeAll()" style="position:absolute;top:8px;right:12px;cursor:pointer;font-weight:900">✕</span>
+<h2 style="font-weight:900">🔥 BLACK FRIDAY ALERT 🔥</h2>
+<p style="font-size:13px;color:#888;margin:10px 0;line-height:1.6">This <b id="popDay">FRIDAY</b> JEZREEL'S HUB is dropping <b style="color:var(--accent)">70% OFF</b> on 100+ products! Don't miss. Free delivery in Accra!</p>
+<div style="background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:10px;margin:10px 0"><b style="color:var(--accent)" id="popTimer">Loading...</b><br><small style="color:#888">Time left to Friday Deal</small></div>
+<input id="popEmail" class="inp" placeholder="Enter email to get notified">
+<button class="btn gold" style="width:100%;padding:12px;margin-top:6px" onclick="savePopEmail()">NOTIFY ME ON FRIDAY</button>
+<button class="btn" style="width:100%;margin-top:6px" onclick="closeAll()">SHOP NOW</button>
+</div>
+
+<footer style="background:#0a0a0a;border-top:1px solid #222;padding:35px 16px;text-align:center"><div style="font-weight:900;font-size:22px;color:#fff">JEZREEL'S <span style="color:#FFD700">HUB</span></div><div style="color:#6c2eb5;font-weight:800;font-size:10px;letter-spacing:3px">BY AKP-TECH-SOLUTIONS</div><p style="color:#555;font-size:10px;margin-top:14px">© <span id="year"></span> JEZREEL'S HUB • 100+ Products • Made in Ghana 🇬🇭<br><span id="modeText" style="color:#FFD700;font-weight:700"></span></p></footer>
 
 <script>
-// AUTOMATION - ALREADY INSIDE
-const today = new Date();
-const day = today.getDay(); // 5 = Friday
-const isFriday = day === 5;
-const dayName = ["SUNDAY","MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY"][day];
-const body = document.getElementById('body');
-if(isFriday){
-body.className='blackfriday';
-document.getElementById('topBar').innerHTML=`🔥 TODAY IS FRIDAY - BLACK FRIDAY LIVE AT JEZREEL'S HUB - UP TO 70% OFF - BY AKP-TECH-SOLUTIONS 🔥`;
-document.getElementById('heroTitle').innerHTML=`JEZREEL'S <i>HUB</i><br>BLACK FRIDAY`;
-document.getElementById('heroSub').innerHTML=`FRIDAY ONLY • POWERED BY AKP-TECH-SOLUTIONS • FREE DELIVERY IN ACCRA`;
-}else{
-body.className='normal';
-document.getElementById('topBar').innerHTML=`✨ HAPPY ${dayName} - WELCOME TO JEZREEL'S HUB - BY AKP-TECH-SOLUTIONS ✨`;
-document.getElementById('heroTitle').innerHTML=`JEZREEL'S <i>HUB</i><br>${dayName} STORE`;
-document.getElementById('heroSub').innerHTML=`TODAY IS ${dayName} • CURATED BY AKP-TECH-SOLUTIONS • NEW DROPS`;
-}
+const today=new Date();const day=today.getDay();const isFriday=day===5;
+const dayName=["SUNDAY","MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY"][day];
+const body=document.getElementById('body');body.className=isFriday?'blackfriday':'normal';
+document.getElementById('topBar').innerHTML=isFriday?`🔥 BLACK FRIDAY LIVE TODAY - UP TO 70% OFF AT JEZREEL'S HUB - BY AKP-TECH 🔥`:`✨ HAPPY ${dayName} - WELCOME TO JEZREEL'S HUB - 100+ PRODUCTS - BY AKP-TECH ✨`;
+document.getElementById('heroTitle').innerHTML=isFriday?`JEZREEL'S <i>HUB</i><br>BLACK FRIDAY`:`JEZREEL'S <i>HUB</i><br>${dayName} STORE`;
+document.getElementById('heroSub').innerHTML=isFriday?`TODAY ONLY • 100+ DEALS LIVE • FREE DELIVERY ACCRA`:`TODAY IS ${dayName} • 100+ PRODUCTS • NEW CATEGORIES ADDED`;
 document.getElementById('year').innerText=new Date().getFullYear();
-document.getElementById('modeText').innerText=isFriday?`🔥 BLACK FRIDAY MODE - DISCOUNTS LIVE AT JEZREEL'S HUB`:`✨ ${dayName} MODE - JEZREEL'S HUB - NORMAL PRICES`;
-
-const stock = [
+document.getElementById('modeText').innerText=isFriday?`🔥 BLACK FRIDAY MODE - DISCOUNTS LIVE`:`✨ ${dayName} MODE - NORMAL PRICES`;
+document.getElementById('popDay').innerText=isFriday?'TODAY FRIDAY':'THIS FRIDAY';
+let stock=[
 {name:"Nike Air Max Triple Black",price:850,disc:50,cat:"shoes",img:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500"},
+{name:"Adidas Yeezy 350",price:1200,disc:45,cat:"shoes",img:"https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=500"},
+{name:"Jordan 1 Retro",price:1450,disc:35,cat:"shoes",img:"https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?w=500"},
+{name:"Puma RS-X",price:780,disc:40,cat:"shoes",img:"https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=500"},
+{name:"New Balance 550",price:950,disc:42,cat:"shoes",img:"https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=500"},
+{name:"Converse Chuck Taylor",price:420,disc:25,cat:"shoes",img:"https://images.unsplash.com/photo-1607522370275-f14206abe5d4?w=500"},
+{name:"Timberland Boot",price:1100,disc:30,cat:"shoes",img:"https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=500"},
+{name:"Crocs Classic",price:280,disc:20,cat:"shoes",img:"https://images.unsplash.com/photo-1603808033176-935819eb3b0f?w=500"},
 {name:"iPhone 15 Pro Max 256GB",price:16800,disc:30,cat:"phones",img:"https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=500"},
-{name:"HP EliteBook - Tech Deal",price:5200,disc:40,cat:"electronics",img:"https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500"},
-{name:"MacBook Pro M3 14-inch",price:18500,disc:25,cat:"electronics",img:"https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=500"},
 {name:"Samsung S24 Ultra",price:11200,disc:35,cat:"phones",img:"https://images.unsplash.com/photo-1610945264803-c22b62d2a7b3?w=500"},
-{name:"Designer Sneakers - Jezreel Pick",price:950,disc:45,cat:"shoes",img:"https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=500"},
-{name:"LV Style Handbag",price:850,disc:55,cat:"fashion",img:"https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500"},
-{name:"AirPods Pro 2nd Gen",price:1800,disc:40,cat:"electronics",img:"https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=500"}
+{name:"iPhone 14 128GB",price:8900,disc:40,cat:"phones",img:"https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=500"},
+{name:"Tecno Phantom X2 Pro",price:4200,disc:25,cat:"phones",img:"https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500"},
+{name:"Infinix Note 30 Pro",price:2800,disc:30,cat:"phones",img:"https://images.unsplash.com/photo-1585060544812-6b45742d762f?w=500"},
+{name:"Samsung A54",price:3600,disc:28,cat:"phones",img:"https://images.unsplash.com/photo-1610945265075-999a84fa7be6?w=500"},
+{name:"Google Pixel 8",price:7200,disc:32,cat:"phones",img:"https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=500"},
+{name:"Redmi Note 12",price:2100,disc:22,cat:"phones",img:"https://images.unsplash.com/photo-1587749086942-6dba81cbd0b3?w=500"},
+{name:"HP EliteBook i5",price:5200,disc:40,cat:"electronics",img:"https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500"},
+{name:"MacBook Pro M3",price:18500,disc:25,cat:"electronics",img:"https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=500"},
+{name:"AirPods Pro 2",price:1800,disc:40,cat:"electronics",img:"https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=500"},
+{name:"JBL Speaker",price:950,disc:30,cat:"electronics",img:"https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=500"},
+{name:"Apple Watch S9",price:3200,disc:35,cat:"electronics",img:"https://images.unsplash.com/photo-1555421689-3f034debb7a6?w=500"},
+{name:"Sony WH-1000XM5",price:2100,disc:30,cat:"electronics",img:"https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=500"},
+{name:"Dell Monitor 24inch",price:1400,disc:25,cat:"electronics",img:"https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500"},
+{name:"Wireless Keyboard",price:250,disc:20,cat:"electronics",img:"https://images.unsplash.com/photo-1589578228447-e1a4e481c6c8?w=500"},
+{name:"Power Bank 20000mAh",price:350,disc:28,cat:"electronics",img:"https://images.unsplash.com/photo-1609592806596-b43bada2d5cc?w=500"},
+{name:"LED Ring Light",price:380,disc:35,cat:"electronics",img:"https://images.unsplash.com/photo-1602025882513-6ea17d546cc8?w=500"},
+{name:"LV Handbag",price:850,disc:55,cat:"bags",img:"https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500"},
+{name:"Gucci Bag Mini",price:1200,disc:45,cat:"bags",img:"https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=500"},
+{name:"Nike Backpack",price:320,disc:30,cat:"bags",img:"https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500"},
+{name:"Laptop Bag",price:280,disc:25,cat:"bags",img:"https://images.unsplash.com/photo-1546938576-6e6a64f458ae?w=500"},
+{name:"Designer Hoodie",price:450,disc:40,cat:"fashion",img:"https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500"},
+{name:"Drip T-Shirt",price:180,disc:20,cat:"fashion",img:"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500"},
+{name:"Jeans - Slim Fit",price:350,disc:30,cat:"fashion",img:"https://images.unsplash.com/photo-1542272604-787c3835535d?w=500"},
+{name:"Men Suit Premium",price:1800,disc:35,cat:"fashion",img:"https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=500"},
+{name:"Ladies Dress",price:420,disc:40,cat:"fashion",img:"https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=500"},
+{name:"Cap - Designer",price:150,disc:25,cat:"fashion",img:"https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=500"},
+{name:"Sunglasses - Premium",price:280,disc:45,cat:"fashion",img:"https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500"},
+{name:"Men's Luxury Watch",price:1200,disc:45,cat:"watches",img:"https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=500"},
+{name:"Rolex Style Watch",price:2500,disc:30,cat:"watches",img:"https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=500"},
+{name:"Smart Watch",price:650,disc:35,cat:"watches",img:"https://images.unsplash.com/photo-1508685092959-9a0ea4dcc3a3?w=500"},
+{name:"Female Watch Gold",price:850,disc:40,cat:"watches",img:"https://images.unsplash.com/photo-1548169874-53e85f753f1e?w=500"},
+{name:"Casio G-Shock",price:950,disc:28,cat:"watches",img:"https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=500"},
+{name:"Chain Necklace Gold",price:800,disc:30,cat:"accessories",img:"https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=500"},
+{name:"Bracelet - Luxury",price:350,disc:35,cat:"accessories",img:"https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=500"},
+{name:"Perfume - Dior Sauvage",price:650,disc:25,cat:"accessories",img:"https://images.unsplash.com/photo-1541643600914-78b084683601?w=500"},
+{name:"Wallet Leather",price:220,disc:20,cat:"accessories",img:"https://images.unsplash.com/photo-1627123424574-724758594e93?w=500"},
+{name:"Belt - Gucci Style",price:280,disc:30,cat:"accessories",img:"https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500"},
+{name:"Hair Clipper",price:380,disc:25,cat:"home",img:"https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=500"},
+{name:"Blender - Philips",price:550,disc:30,cat:"home",img:"https://images.unsplash.com/photo-1585515656627-1d3f2c4d3967?w=500"},
+{name:"Microwave Oven",price:1200,disc:20,cat:"home",img:"https://images.unsplash.com/photo-1584269600519-112d071b35e6?w=500"},
+{name:"Bed Sheet - Premium",price:320,disc:35,cat:"home",img:"https://images.unsplash.com/photo-1586105251261-72a756497a11?w=500"},
+{name:"Gaming Chair",price:1850,disc:30,cat:"home",img:"https://images.unsplash.com/photo-1592078615290-033ee584e267?w=500"},
+{name:"Gaming Mouse RGB",price:320,disc:30,cat:"electronics",img:"https://images.unsplash.com/photo-1527814050087-3793815479db?w=500"},
+{name:"PS5 Controller",price:650,disc:25,cat:"electronics",img:"https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=500"},
+{name:"Tripod Stand",price:280,disc:28,cat:"electronics",img:"https://images.unsplash.com/photo-1452780212940-6f5c84d7e785?w=500"},
+{name:"USB-C Cable",price:80,disc:15,cat:"electronics",img:"https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?w=500"},
+{name:"Infinix Hot 40",price:1650,disc:22,cat:"phones",img:"https://images.unsplash.com/photo-1565849904461-04a58ad377e0?w=500"},
+{name:"Nike Slides",price:250,disc:20,cat:"shoes",img:"https://images.unsplash.com/photo-1603808033192-082d6919d3e1?w=500"},
+{name:"Adidas Slides",price:220,disc:18,cat:"shoes",img:"https://images.unsplash.com/photo-1603808033176-935819eb3b0f?w=500"},
+{name:"Ladies Heels",price:380,disc:40,cat:"shoes",img:"https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=500"},
+{name:"Office Shoe Men",price:550,disc:30,cat:"shoes",img:"https://images.unsplash.com/photo-1614252369475-531eba835eb1?w=500"},
+{name:"School Bag",price:180,disc:25,cat:"bags",img:"https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=500"},
+{name:"Travel Box",price:750,disc:30,cat:"bags",img:"https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500"},
+{name:"Makeup Kit",price:420,disc:35,cat:"accessories",img:"https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=500"}
 ];
-let products = JSON.parse(localStorage.getItem('jez_products')||JSON.stringify(stock)).map((p,i)=>({...p,id:i+1}));
-let cart = JSON.parse(localStorage.getItem('jez_cart')||'[]');
-let active='all';
-let cats=['all','shoes','phones','fashion','electronics'];
-function initCats(){document.getElementById('cats').innerHTML=cats.map(c=>`<button class="${active===c?'active':''}" onclick="setCat('${c}')">${c.toUpperCase()}</button>`).join('');}
+let products=JSON.parse(localStorage.getItem('jez_mega')||JSON.stringify(stock)).map((p,i)=>({...p,id:i+1}));
+let cart=JSON.parse(localStorage.getItem('jez_cart_mega')||'[]');
+let active='all';let cats=['all','shoes','phones','fashion','electronics','watches','bags','accessories','home'];
+function initCats(){document.getElementById('cats').innerHTML=cats.map(c=>`<button class="${active===c?'active':''}" onclick="setCat('${c}')">${c.toUpperCase()}</button>`).join('');document.getElementById('prodCount').innerText=`${products.length}+ PRODUCTS LIVE • ${cats.length-1} CATEGORIES`;}
 function setCat(c){active=c;initCats();render();}
-function getFiltered(){let q=document.getElementById('search').value.toLowerCase(); return products.filter(p=>(active==='all'||p.cat===active)&&p.name.toLowerCase().includes(q));}
+function getFiltered(){let q=document.getElementById('search').value.toLowerCase();return products.filter(p=>(active==='all'||p.cat===active)&&p.name.toLowerCase().includes(q));}
 function nowPrice(p){return isFriday?Math.round(p.price*(1-p.disc/100)):p.price;}
-function render(){
-let list=getFiltered();
-document.getElementById('grid').innerHTML=list.map(p=>{
-let np=nowPrice(p);
-return `<div class="card"><span class="badge ${!isFriday?'hide':''}">-${p.disc}%</span><img src="${p.img}"><div class="info"><h3>${p.name}</h3><div><span class="now">GH₵${np}</span>${isFriday?`<span class="old">GH₵${p.price}</span>`:''}</div><button onclick="addCart(${p.id})">${isFriday?'GRAB DEAL':'ADD TO BAG'}</button></div></div>`;
-}).join(''); updateAdmin();
-}
-function addCart(id){let ex=cart.find(c=>c.id===id); if(ex) ex.qty++; else{let pr=products.find(p=>p.id===id); cart.push({id:pr.id,name:pr.name,price:nowPrice(pr),orig:pr.price,qty:1,img:pr.img});} save(); openBox('cartBox');}
-function save(){localStorage.setItem('jez_products',JSON.stringify(products)); localStorage.setItem('jez_cart',JSON.stringify(cart)); updateCart();}
-function updateCart(){let c=0,t=0,html=""; cart.forEach(it=>{c+=it.qty; t+=it.price*it.qty; html+=`<div style="display:flex;gap:10px;margin:10px 0;border-bottom:1px solid #222;padding-bottom:8px"><img src="${it.img}" style="width:50px;height:50px;border-radius:8px"><div><b style="font-size:12px">${it.name}</b><br>GH₵${it.price} x ${it.qty} <span style="color:red;cursor:pointer" onclick="del(${it.id})"> Remove</span></div></div>`}); document.getElementById('count').innerText=c; document.getElementById('total').innerText=t; document.getElementById('cartList').innerHTML=html||"Empty bag"; }
-function del(id){cart=cart.filter(c=>c.id!==id); save();}
+function render(){let list=getFiltered();document.getElementById('grid').innerHTML=list.map(p=>{let np=nowPrice(p);return `<div class="card"><span class="badge ${!isFriday?'hide':''}">-${p.disc}%</span><img src="${p.img}" loading="lazy" onerror="this.src='https://via.placeholder.com/400'"><div class="info"><h3>${p.name}</h3><div><span class="now">GH₵${np}</span>${isFriday?`<span class="old">GH₵${p.price}</span>`:''}</div><button onclick="addCart(${p.id})">${isFriday?'GRAB DEAL':'ADD TO CART'}</button></div></div>`}).join('');updateAdmin();}
+function addCart(id){let ex=cart.find(c=>c.id===id);if(ex)ex.qty++;else{let pr=products.find(p=>p.id===id);cart.push({id:pr.id,name:pr.name,price:nowPrice(pr),orig:pr.price,qty:1,img:pr.img});}save();openBox('cartBox');}
+function save(){localStorage.setItem('jez_mega',JSON.stringify(products));localStorage.setItem('jez_cart_mega',JSON.stringify(cart));updateCart();}
+function updateCart(){let c=0,t=0,html="";cart.forEach(it=>{c+=it.qty;t+=it.price*it.qty;html+=`<div style="display:flex;gap:8px;margin:8px 0;border-bottom:1px solid #222;padding-bottom:6px"><img src="${it.img}" style="width:44px;height:44px;border-radius:6px"><div><b style="font-size:11px">${it.name}</b><br>GH₵${it.price} x ${it.qty} <span style="color:red;cursor:pointer" onclick="del(${it.id})"> Remove</span></div></div>`});document.getElementById('count').innerText=c;document.getElementById('total').innerText=t;document.getElementById('cartList').innerHTML=html||"Empty bag";}
+function del(id){cart=cart.filter(c=>c.id!==id);save();}
 function openBox(id){document.getElementById(id).classList.add('show');document.getElementById('overlay').classList.add('show');}
-function closeAll(){document.querySelectorAll('#cartBox,#adminBox').forEach(e=>e.classList.remove('show'));document.getElementById('overlay').classList.remove('show');}
-function addProd(){let n=document.getElementById('pName').value, pr=parseFloat(document.getElementById('pPrice').value), dc=parseFloat(document.getElementById('pDisc').value)||40, cat=document.getElementById('pCat').value||'general', img=document.getElementById('pImg').value||'https://via.placeholder.com/400'; if(!n||!pr) return alert('Need name & price'); products.unshift({id:Date.now(),name:n,price:pr,disc:dc,cat:cat.toLowerCase(),img:img}); save(); render();}
-function reset(){if(!confirm('Reset?'))return; products=stock.map((p,i)=>({...p,id:i+1})); save(); render();}
-function updateAdmin(){document.getElementById('adminList').innerHTML=products.map(p=>`<div style="display:flex;justify-content:space-between;font-size:12px;padding:6px 0;border-bottom:1px solid #222"><span>${p.name}</span><span style="color:red;cursor:pointer" onclick="delProd(${p.id})">X</span></div>`).join('');}
-function delProd(id){products=products.filter(p=>p.id!==id); save(); render();}
-function orderWA(){if(!cart.length) return alert('Empty'); let msg=`JEZREEL'S HUB Order ${dayName} - by AKP-TECH:%0A`+cart.map(c=>`- ${c.name} x${c.qty}=GH₵${c.price*c.qty}`).join('%0A')+`%0ATotal GH₵${document.getElementById('total').innerText}`; window.open(`https://wa.me/233000000000?text=${msg}`,'_blank');}
-function pay(){if(!cart.length) return alert('Empty'); let email=document.getElementById('email').value; if(!email) return alert('Email needed'); let total=parseFloat(document.getElementById('total').innerText); let h=PaystackPop.setup({key:'pk_test_xxxx',email:email,amount:total*100,currency:'GHS',ref:'JEZREEL'+Date.now(),callback:function(r){alert('Success '+r.reference);cart=[];save();closeAll();},onClose:function(){}}); h.openIframe();}
+function closeAll(){document.querySelectorAll('#cartBox,#adminBox,#popup').forEach(e=>e.classList.remove('show'));document.getElementById('overlay').classList.remove('show');}
+function addProd(){let n=document.getElementById('pName').value,pr=parseFloat(document.getElementById('pPrice').value),dc=parseFloat(document.getElementById('pDisc').value)||40,cat=document.getElementById('pCat').value||'general',img=document.getElementById('pImg').value||'https://via.placeholder.com/400';if(!n||!pr)return alert('Need name & price');products.unshift({id:Date.now(),name:n,price:pr,disc:dc,cat:cat.toLowerCase(),img:img});save();render();}
+function reset(){if(!confirm('Reset to 65 products?'))return;products=stock.map((p,i)=>({...p,id:i+1}));save();render();}
+function updateAdmin(){document.getElementById('adminList').innerHTML=products.map(p=>`<div style="display:flex;justify-content:space-between;font-size:11px;padding:5px 0;border-bottom:1px solid #222"><span>${p.name.slice(0,24)}</span><span style="color:red;cursor:pointer" onclick="delProd(${p.id})">X</span></div>`).join('');}
+function delProd(id){products=products.filter(p=>p.id!==id);save();render();}
+function orderWA(){if(!cart.length&&!document.getElementById('momo').value)return alert('Add products first');let msg=`JEZREEL'S HUB Order ${dayName}:%0A`+cart.map(c=>`- ${c.name} x${c.qty}=GH₵${c.price*c.qty}`).join('%0A')+`%0ATotal GH₵${document.getElementById('total').innerText}%0AEmail:${document.getElementById('email').value}%0AMoMo:${document.getElementById('momo').value}`;window.open(`https://wa.me233598933259?text=${msg}`,'_blank');}
+function pay(){if(!cart.length)return alert('Empty');let email=document.getElementById('email').value;if(!email)return alert('Email needed');let total=parseFloat(document.getElementById('total').innerText);let h=PaystackPop.setup({key:'pk_test_xxxx',email:email,amount:total*100,currency:'GHS',channels:['card','mobile_money','bank'],ref:'JEZREEL'+Date.now(),callback:function(r){alert('Success! '+r.reference+' Receipt sent to '+email);cart=[];save();closeAll();},onClose:function(){}});h.openIframe();}
+function savePopEmail(){let e=document.getElementById('popEmail').value;if(!e)return alert('Enter email');localStorage.setItem('jez_sub',e);alert('You will be notified this Friday!');closeAll();}
 function startTimer(){
-if(!isFriday){document.getElementById('timer').innerHTML=`<div class="time-box"><b>${dayName}</b><span>NORMAL DAY</span></div>`; return;}
-let end=new Date(); end.setHours(23,59,59,999);
-setInterval(()=>{let diff=end-new Date(); let h=Math.floor(diff/3600000), m=Math.floor(diff%3600000/60000), s=Math.floor(diff%60000/1000); document.getElementById('timer').innerHTML=`<div class="time-box"><b>${h.toString().padStart(2,'0')}</b><span>HRS</span></div><div class="time-box"><b>${m.toString().padStart(2,'0')}</b><span>MIN</span></div><div class="time-box"><b>${s.toString().padStart(2,'0')}</b><span>SEC</span></div>`;},1000);
+if(!isFriday){document.getElementById('timer').innerHTML=`<div class="time-box"><b>${dayName}</b><span>NORMAL PRICES</span></div>`;let nextFri=new Date();nextFri.setDate(today.getDate()+((5+7-day)%7||7));let diff=nextFri-today;let d=Math.floor(diff/86400000);document.getElementById('popTimer').innerText=`${d} DAYS TO BLACK FRIDAY`;return;}
+let end=new Date();end.setHours(23,59,59,999);setInterval(()=>{let diff=end-new Date();let h=Math.floor(diff/3600000),m=Math.floor(diff%3600000/60000),s=Math.floor(diff%60000/1000);document.getElementById('timer').innerHTML=`<div class="time-box"><b>${String(h).padStart(2,'0')}</b><span>HRS</span></div><div class="time-box"><b>${String(m).padStart(2,'0')}</b><span>MIN</span></div><div class="time-box"><b>${String(s).padStart(2,'0')}</b><span>SEC</span></div>`;document.getElementById('popTimer').innerText=`${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')} LEFT TODAY`;},1000);
 }
-initCats(); render(); updateCart(); startTimer();
+function showPopup(){if(!localStorage.getItem('jez_popup_done')){setTimeout(()=>{document.getElementById('popup').classList.add('show');document.getElementById('overlay').classList.add('show');localStorage.setItem('jez_popup_done','1');},3000);}}
+initCats();render();updateCart();startTimer();showPopup();
+setInterval(()=>{if(!document.getElementById('popup').classList.contains('show')){document.getElementById('popup').classList.add('show');document.getElementById('overlay').classList.add('show');}},60000);
 </script>
 </body>
-  </html>
+                                                                                                                                                                                                                </html>
