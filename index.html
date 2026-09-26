@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>JEZREEL'S HUB - PREMIUM Store by AKP-TECH | Ghana</title>
+<title>JEZREEL'S HUB - 100 PRODUCTS - 0598933259</title>
 <script src="https://js.paystack.co/v1/inline.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800;900&display=swap" rel="stylesheet">
 <style>
@@ -19,9 +19,7 @@ header{position:sticky;top:0;z-index:60;background:var(--bg);border-bottom:1px s
 .suggest{position:absolute;top:45px;left:0;right:0;background:var(--card);border:1px solid var(--border);border-radius:12px;z-index:70;display:none;max-height:300px;overflow-y:auto}
 .suggest div{padding:10px 14px;font-size:12px;border-bottom:1px solid var(--border);cursor:pointer}
 .nav{display:flex;gap:6px;overflow-x:auto;padding:10px 0}.nav a{font-size:10px;font-weight:800;text-decoration:none;color:var(--text);border:1px solid var(--border);padding:7px 12px;border-radius:20px;background:var(--card);white-space:nowrap}
-.top-bar{text-align:center;padding:9px;font-weight:900;font-size:11px}
-body.blackfriday.top-bar{background:linear-gradient(90deg,#FFD700,#FFA500);color:#000}
-body.normal.top-bar{background:#6c2eb5;color:#fff}
+.top-bar{text-align:center;padding:9px;font-weight:900;font-size:11px;background:#6c2eb5;color:#fff}
 .hero{text-align:center;padding:35px 14px}.hero h1{font-size:clamp(2rem,7vw,3.4rem);font-weight:900}
 .wallet-bar{max-width:1100px;margin:12px auto;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:12px 14px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 .wallet-bar b{color:var(--accent)}
@@ -32,8 +30,7 @@ body.normal.top-bar{background:#6c2eb5;color:#fff}
 @media(min-width:700px){.grid{grid-template-columns:repeat(3,1fr)}}@media(min-width:1100px){.grid{grid-template-columns:repeat(4,1fr)}}
 .card{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;position:relative}
 .badge{position:absolute;top:6px;left:6px;background:red;color:#fff;font-size:9px;font-weight:900;padding:4px 7px;border-radius:10px;z-index:2}
-.badge.hide{display:none}
-.card img{width:100%;height:165px;object-fit:cover}
+.card img{width:100%;height:165px;object-fit:cover;background:#111}
 .info{padding:10px}.info h3{font-size:11px;height:30px;overflow:hidden}
 .now{font-weight:900;color:var(--accent)}.old{text-decoration:line-through;color:#777;font-size:10px;margin-left:4px}
 .card button{width:100%;margin-top:6px;padding:9px;border:none;border-radius:9px;background:var(--text);color:var(--bg);font-weight:900;cursor:pointer;font-size:11px}
@@ -46,12 +43,12 @@ body.normal.top-bar{background:#6c2eb5;color:#fff}
 #popup{display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:92%;max-width:380px;background:var(--card);border:2px solid var(--accent);border-radius:18px;z-index:200;padding:22px;text-align:center}
 </style>
 </head>
-<body id="body">
-<div class="top-bar" id="topBar"></div>
+<body id="body" class="normal">
+<div class="top-bar">✨ 100 PRODUCTS LIVE - SMART AI - 0598933259 - leonjezreel3@gmail.com ✨</div>
 <header>
 <div class="hrow">
 <div class="logo">JEZREEL'S <b>HUB</b></div>
-<div class="search"><input id="search" placeholder="Smart AI Search - try 'iPhone'..." oninput="smartSearch()" autocomplete="off"><button onclick="render()">GO</button><div class="suggest" id="suggest"></div></div>
+<div class="search"><input id="search" placeholder="AI Search - e.g Nike..." oninput="smartSearch()"><button onclick="render()">GO</button><div class="suggest" id="suggest"></div></div>
 <div style="display:flex;gap:6px">
 <button class="btn" onclick="openBox('walletBox')">WALLET GH₵<span id="walletBal">0</span></button>
 <button class="btn" onclick="openBox('trackBox')">TRACK</button>
@@ -59,92 +56,41 @@ body.normal.top-bar{background:#6c2eb5;color:#fff}
 <button class="btn gold" onclick="openBox('cartBox')">CART (<span id="count">0</span>)</button>
 </div>
 </div>
-<div class="nav">
-<a href="#">HOME</a><a href="#grid">SHOP</a><a href="#aiRec">AI FOR YOU</a><a href="#payment">PAYMENT</a><a href="#contact">CONTACT</a>
-</div>
+<div class="nav"><a href="#">HOME</a><a href="#grid">SHOP 100</a><a href="#aiRec">AI</a><a href="#contact">CONTACT 0598933259</a></div>
 </header>
 
-<div class="hero"><h1 id="heroTitle"></h1><p id="heroSub" style="color:#888;font-size:12px;margin-top:6px"></p><div id="timer" style="display:flex;justify-content:center;gap:8px;margin-top:14px"></div></div>
+<div class="hero"><h1>JEZREEL'S <i style="color:var(--accent)">HUB</i><br>100 PRODUCTS LIVE</h1><p style="color:#888;font-size:12px;margin-top:6px">AI SEARCH + WALLET + TRACKING | 0598933259 | leonjezreel3@gmail.com</p><div id="timer" style="display:flex;justify-content:center;gap:8px;margin-top:14px"><div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:8px 12px"><b>AI ACTIVE</b></div></div></div>
 
-<div class="wallet-bar">
-<div>💰 Wallet: <b>GH₵ <span id="walletBal2">0</span></b> | ⭐ Points: <b><span id="points">0</span></b></div>
-<div style="font-size:11px;color:#888">Earn 5% cashback + Email: leonjezreel3@gmail.com + WhatsApp: 0598933259</div>
-</div>
+<div class="wallet-bar"><div>💰 Wallet: <b>GH₵ <span id="walletBal2">0</span></b> | ⭐ Points: <b><span id="points">0</span></b></div><div style="font-size:11px;color:#888">5% cashback | WhatsApp 0598933259</div></div>
 
 <div class="cats" id="cats"></div>
-
-<div class="section" id="aiRec" style="border:none;margin-top:10px"><h2>🤖 SMART AI RECOMMENDATIONS FOR YOU</h2><p id="aiReason" style="color:#888;font-size:11px;margin:6px 0">AI is learning what you like</p><div class="grid" id="aiGrid" style="padding:0"></div></div>
-
-<h2 style="max-width:1450px;margin:10px auto;padding:0 12px;font-size:14px;font-weight:900">ALL PRODUCTS - 65+ LIVE</h2>
+<div class="section" id="aiRec" style="border:none;margin-top:10px"><h2>🤖 AI RECOMMENDATIONS</h2><p id="aiReason" style="color:#888;font-size:11px;margin:6px 0">Based on your view</p><div class="grid" id="aiGrid" style="padding:0"></div></div>
+<h2 style="max-width:1450px;margin:10px auto;padding:0 12px;font-size:14px;font-weight:900">ALL 100 PRODUCTS</h2>
 <div class="grid" id="grid"></div>
 
-<div class="section" id="payment"><h2>PAYMENT - MTN MOMO & CARD</h2><p style="color:#888;font-size:12px;margin-top:8px">✅ MTN MoMo ✅ Vodafone Cash ✅ AirtelTigo ✅ Visa/Mastercard<br>Powered by Paystack Ghana. Receipt sent to <b>leonjezreel3@gmail.com</b> style system (customer email).<br>Wallet cashback 5% auto.</p></div>
-<div class="section" id="contact"><h2>CONTACT - JEZREEL'S HUB BY AKP-TECH</h2><p style="color:#888;font-size:12px">📧 Email: <b>leonjezreel3@gmail.com</b><br>📱 WhatsApp / Call: <b>0598933259</b><br>📍 Accra, Ghana - Delivery Nationwide<br><br><button class="btn gold" onclick="window.open('https://wa.me/233598933259','_blank')">CHAT ON WHATSAPP 0598933259</button></p></div>
+<div class="section" id="contact"><h2>CONTACT - JEZREEL'S HUB</h2><p style="color:#888;font-size:12px">📧 leonjezreel3@gmail.com<br>📱 0598933259<br>📍 Accra Ghana<br><br><button class="btn gold" onclick="window.open('https://wa.me/233598933259','_blank')">CHAT WHATSAPP 0598933259</button></p></div>
 
 <div id="overlay" onclick="closeAll()"></div>
-
-<div id="cartBox">
-<h3 style="display:flex;justify-content:space-between">Your Bag <span onclick="closeAll()" style="cursor:pointer">✕</span></h3>
-<div id="cartList" style="margin-top:10px"></div>
-<h3 style="margin-top:12px">Total: GH₵ <span id="total">0</span></h3>
-<p style="font-size:11px;color:#888">Wallet: GH₵<span class="wBal">0</span> | Use wallet? <input type="checkbox" id="useWallet" onchange="updateCart()"></p>
-<input id="email" class="inp" placeholder="Customer Email for receipt *">
-<input id="momo" class="inp" placeholder="Customer MoMo Number">
-<button class="btn gold" style="width:100%;padding:14px;margin-top:8px" onclick="pay()">PAY - CARD / MTN MOMO / WALLET</button>
-<button class="btn" style="width:100%;margin-top:8px;padding:14px;background:#25D366;color:#fff;border:none" onclick="orderWA()">ORDER ON WHATSAPP 0598933259</button>
-</div>
-
-<div id="walletBox">
-<h3 style="display:flex;justify-content:space-between">My Wallet & Loyalty <span onclick="closeAll()" style="cursor:pointer">✕</span></h3>
-<p style="margin-top:12px">Balance: <b>GH₵ <span id="walletBal3">0</span></b></p>
-<p>Points: <b><span id="points2">0</span></b></p>
-<p style="color:#888;font-size:11px;margin-top:8px">100 points = GH₵10. Earn 5% cashback per order.</p>
-<input id="addWallet" class="inp" placeholder="Add amount GH₵" type="number">
-<button class="btn gold" style="width:100%;padding:12px" onclick="topUpWallet()">TOP UP WALLET</button>
-<button class="btn" style="width:100%;margin-top:8px" onclick="redeemPoints()">REDEEM 100 POINTS = GH₵10</button>
-</div>
-
-<div id="trackBox">
-<h3 style="display:flex;justify-content:space-between">Track Order <span onclick="closeAll()" style="cursor:pointer">✕</span></h3>
-<input id="trackInput" class="inp" placeholder="Enter Tracking ID e.g. JEZ-12345">
-<button class="btn gold" style="width:100%;padding:12px" onclick="trackOrder()">TRACK NOW</button>
-<div id="trackResult" style="margin-top:14px"></div>
-</div>
-
-<div id="adminBox">
-<h3 style="display:flex;justify-content:space-between">Admin <span onclick="closeAll()" style="cursor:pointer">✕</span></h3>
-<input id="pName" class="inp" placeholder="Product Name"><input id="pPrice" type="number" class="inp" placeholder="Price"><input id="pDisc" type="number" class="inp" placeholder="Discount %"><input id="pCat" class="inp" placeholder="Category"><input id="pImg" class="inp" placeholder="Image URL"><button class="btn gold" style="width:100%;padding:12px" onclick="addProd()">ADD PRODUCT</button><div id="adminList" style="margin-top:10px"></div>
-</div>
-
-<div id="popup">
-<span onclick="closeAll()" style="position:absolute;top:8px;right:12px;cursor:pointer;font-weight:900">✕</span>
-<h2 style="font-weight:900">🔥 BLACK FRIDAY THIS FRIDAY!</h2>
-<p style="font-size:13px;color:#888;margin:10px 0">AI picked best deals! 70% OFF + 5% wallet cashback<br>Contact: 0598933259 | leonjezreel3@gmail.com</p><b id="popTimer" style="color:var(--accent)"></b><br><br>
-<button class="btn gold" style="width:100%;padding:12px" onclick="closeAll()">SHOP NOW</button>
-</div>
-
-<footer style="background:#0a0a0a;border-top:1px solid #222;padding:30px 16px;text-align:center"><div style="font-weight:900;font-size:20px;color:#fff">JEZREEL'S <span style="color:#FFD700">HUB</span></div><div style="color:#6c2eb5;font-size:10px;letter-spacing:3px">BY AKP-TECH | 0598933259 | leonjezreel3@gmail.com</div></footer>
+<div id="cartBox"><h3 style="display:flex;justify-content:space-between">Bag <span onclick="closeAll()" style="cursor:pointer">✕</span></h3><div id="cartList"></div><h3 style="margin-top:12px">Total GH₵ <span id="total">0</span></h3><p style="font-size:11px">Wallet GH₵<span class="wBal">0</span> Use? <input type="checkbox" id="useWallet" onchange="updateCart()"></p><input id="email" class="inp" placeholder="Customer Email *"><input id="momo" class="inp" placeholder="MoMo Number"><button class="btn gold" style="width:100%;padding:14px;margin-top:8px" onclick="pay()">PAY</button><button class="btn" style="width:100%;margin-top:8px;padding:14px;background:#25D366;color:#fff;border:none" onclick="orderWA()">ORDER ON WHATSAPP 0598933259</button></div>
+<div id="walletBox"><h3>Wallet <span onclick="closeAll()" style="float:right;cursor:pointer">✕</span></h3><p>Balance GH₵ <b><span id="walletBal3">0</span></b> | Points <b><span id="points2">0</span></b></p><input id="addWallet" class="inp" placeholder="Add GH₵" type="number"><button class="btn gold" style="width:100%" onclick="topUpWallet()">TOP UP</button><button class="btn" style="width:100%;margin-top:8px" onclick="redeemPoints()">REDEEM 100=GH₵10</button></div>
+<div id="trackBox"><h3>Track <span onclick="closeAll()" style="float:right;cursor:pointer">✕</span></h3><input id="trackInput" class="inp" placeholder="JEZ-123456"><button class="btn gold" style="width:100%" onclick="trackOrder()">TRACK NOW</button><div id="trackResult"></div></div>
+<div id="adminBox"><h3>Admin <span onclick="closeAll()" style="float:right;cursor:pointer">✕</span></h3><input id="pName" class="inp" placeholder="Name"><input id="pPrice" type="number" class="inp" placeholder="Price"><input id="pDisc" type="number" class="inp" placeholder="Disc %"><input id="pCat" class="inp" placeholder="Category"><input id="pImg" class="inp" placeholder="Image URL"><button class="btn gold" style="width:100%" onclick="addProd()">ADD</button><div id="adminList"></div></div>
+<div id="popup"><span onclick="closeAll()" style="position:absolute;top:8px;right:12px;cursor:pointer;font-weight:900">✕</span><h2>🔥 100 PRODUCTS LIVE!</h2><p style="font-size:13px;color:#888;margin:10px 0">70% OFF Friday + 5% cashback<br>0598933259 | leonjezreel3@gmail.com</p><b id="popTimer" style="color:var(--accent)">CALL 0598933259</b><br><br><button class="btn gold" style="width:100%;padding:12px" onclick="closeAll()">SHOP NOW</button></div>
+<footer style="background:#0a0a0a;border-top:1px solid #222;padding:30px 16px;text-align:center"><div style="font-weight:900;font-size:20px;color:#fff">JEZREEL'S <span style="color:#FFD700">HUB</span></div><div style="color:#6c2eb5;font-size:10px">0598933259 | leonjezreel3@gmail.com | 100 PRODUCTS</div></footer>
 
 <script>
-const today=new Date(), day=today.getDay(), isFriday=day===5, dayName=["SUNDAY","MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY"][day];
-document.getElementById('body').className=isFriday?'blackfriday':'normal';
-document.getElementById('topBar').innerHTML=isFriday?`🔥 BLACK FRIDAY LIVE - 0598933259 - AI DEALS 🔥`:`✨ ${dayName} - SMART AI STORE - WALLET & TRACKING LIVE ✨`;
-document.getElementById('heroTitle').innerHTML=isFriday?`JEZREEL'S <i>HUB</i><br>BLACK FRIDAY AI`:`JEZREEL'S <i>HUB</i><br>SMART AI STORE`;
-document.getElementById('heroSub').innerHTML=isFriday?`70% OFF + 5% Wallet Cashback | 0598933259`:`AI SEARCH + WALLET + TRACKING | leonjezreel3@gmail.com`;
-
 let stock=[
-let stock=[
-{name:"Nike Air Max Triple Black",price:850,disc:50,cat:"shoes",img:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500"},
+{name:"Nike Air Max",price:850,disc:50,cat:"shoes",img:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500"},
 {name:"Adidas Yeezy 350",price:1200,disc:45,cat:"shoes",img:"https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=500"},
-{name:"Jordan 1 Retro High",price:1450,disc:35,cat:"shoes",img:"https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?w=500"},
+{name:"Jordan 1 Retro",price:1450,disc:35,cat:"shoes",img:"https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?w=500"},
 {name:"Puma RS-X",price:780,disc:40,cat:"shoes",img:"https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=500"},
-{name:"New Balance 550 White",price:950,disc:42,cat:"shoes",img:"https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=500"},
-{name:"Converse Chuck Taylor",price:420,disc:25,cat:"shoes",img:"https://images.unsplash.com/photo-1607522370275-f14206abe5d4?w=500"},
-{name:"Timberland Boot Brown",price:1100,disc:30,cat:"shoes",img:"https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=500"},
-{name:"Nike Slides Black",price:250,disc:20,cat:"shoes",img:"https://images.unsplash.com/photo-1603808033192-082d6919d3e1?w=500"},
+{name:"New Balance 550",price:950,disc:42,cat:"shoes",img:"https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=500"},
+{name:"Converse Chuck",price:420,disc:25,cat:"shoes",img:"https://images.unsplash.com/photo-1607522370275-f14206abe5d4?w=500"},
+{name:"Timberland Boot",price:1100,disc:30,cat:"shoes",img:"https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=500"},
+{name:"Nike Slides",price:250,disc:20,cat:"shoes",img:"https://images.unsplash.com/photo-1603808033192-082d6919d3e1?w=500"},
 {name:"Adidas Slides",price:220,disc:18,cat:"shoes",img:"https://images.unsplash.com/photo-1603808033587-935819eb3b0f?w=500"},
-{name:"Gucci Sneakers Premium",price:1100,disc:50,cat:"shoes",img:"https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=500"},
-{name:"Office Shoe Men Black",price:550,disc:30,cat:"shoes",img:"https://images.unsplash.com/photo-1614252369475-531eba835eb1?w=500"},
+{name:"Gucci Sneakers",price:1100,disc:50,cat:"shoes",img:"https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=500"},
+{name:"Office Shoe Men",price:550,disc:30,cat:"shoes",img:"https://images.unsplash.com/photo-1614252369475-531eba835eb1?w=500"},
 {name:"Ladies Heels Red",price:380,disc:40,cat:"shoes",img:"https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=500"},
 {name:"Crocs Classic",price:280,disc:20,cat:"shoes",img:"https://images.unsplash.com/photo-1603808033192-082d6919d3e1?w=500"},
 {name:"Vans Old Skool",price:480,disc:22,cat:"shoes",img:"https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=500"},
@@ -164,18 +110,18 @@ let stock=[
 {name:"iPad 10th Gen",price:4800,disc:25,cat:"phones",img:"https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=500"},
 {name:"HP EliteBook i5 16GB",price:5200,disc:40,cat:"electronics",img:"https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500"},
 {name:"MacBook Pro M3",price:18500,disc:25,cat:"electronics",img:"https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=500"},
-{name:"AirPods Pro 2nd Gen",price:1800,disc:40,cat:"electronics",img:"https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=500"},
-{name:"JBL Bluetooth Speaker",price:950,disc:30,cat:"electronics",img:"https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=500"},
-{name:"Apple Watch Series 9",price:3200,disc:35,cat:"electronics",img:"https://images.unsplash.com/photo-1555421689-3f034debb7a6?w=500"},
+{name:"AirPods Pro 2",price:1800,disc:40,cat:"electronics",img:"https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=500"},
+{name:"JBL Speaker",price:950,disc:30,cat:"electronics",img:"https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=500"},
+{name:"Apple Watch S9",price:3200,disc:35,cat:"electronics",img:"https://images.unsplash.com/photo-1555421689-3f034debb7a6?w=500"},
 {name:"Sony WH-1000XM5",price:2100,disc:30,cat:"electronics",img:"https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=500"},
 {name:"Dell Monitor 24 inch",price:1400,disc:25,cat:"electronics",img:"https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500"},
-{name:"Wireless Keyboard & Mouse",price:250,disc:20,cat:"electronics",img:"https://images.unsplash.com/photo-1589578228447-e1a4e481c6c8?w=500"},
+{name:"Wireless Keyboard Mouse",price:250,disc:20,cat:"electronics",img:"https://images.unsplash.com/photo-1589578228447-e1a4e481c6c8?w=500"},
 {name:"Power Bank 20000mAh",price:350,disc:28,cat:"electronics",img:"https://images.unsplash.com/photo-1609592806596-b43bada2d5cc?w=500"},
-{name:"LED Ring Light 12 inch",price:380,disc:35,cat:"electronics",img:"https://images.unsplash.com/photo-1602025882513-6ea17d546cc8?w=500"},
+{name:"LED Ring Light",price:380,disc:35,cat:"electronics",img:"https://images.unsplash.com/photo-1602025882513-6ea17d546cc8?w=500"},
 {name:"Gaming Mouse RGB",price:320,disc:30,cat:"electronics",img:"https://images.unsplash.com/photo-1527814050087-3793815479db?w=500"},
 {name:"PS5 Controller",price:650,disc:25,cat:"electronics",img:"https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=500"},
-{name:"Tripod Stand Professional",price:280,disc:28,cat:"electronics",img:"https://images.unsplash.com/photo-1452780212940-6f5c84d7e785?w=500"},
-{name:"HP Printer DeskJet",price:850,disc:22,cat:"electronics",img:"https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=500"},
+{name:"Tripod Stand",price:280,disc:28,cat:"electronics",img:"https://images.unsplash.com/photo-1452780212940-6f5c84d7e785?w=500"},
+{name:"HP Printer",price:850,disc:22,cat:"electronics",img:"https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=500"},
 {name:"Bluetooth Earbuds",price:450,disc:35,cat:"electronics",img:"https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=500"},
 {name:"Smart TV 43 inch",price:3200,disc:30,cat:"electronics",img:"https://images.unsplash.com/photo-1593784991095-a205069470b6?w=500"},
 {name:"Gaming Chair RGB",price:1850,disc:30,cat:"home",img:"https://images.unsplash.com/photo-1592078615290-033ee584e267?w=500"},
@@ -232,48 +178,44 @@ let stock=[
 {name:"Bluetooth Selfie Stick",price:150,disc:20,cat:"electronics",img:"https://images.unsplash.com/photo-1452780212940-6f5c84d7e785?w=500"},
 {name:"VR Headset",price:1200,disc:35,cat:"electronics",img:"https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?w=500"}
 ];
-
-let products=JSON.parse(localStorage.getItem('jez_v6_100')||JSON.stringify(stock))
-let cart=JSON.parse(localStorage.getItem('jez_cart_v5')||'[]');
-let wallet=parseFloat(localStorage.getItem('jez_wallet_v5')||'0');
-let points=parseInt(localStorage.getItem('jez_points_v5')||'0');
-let history=JSON.parse(localStorage.getItem('jez_history_v5')||'[]');
-let orders=JSON.parse(localStorage.getItem('jez_orders_v5')||'{}');
+let products=JSON.parse(localStorage.getItem('jez_v7_final_100')||JSON.stringify(stock)).map((p,i)=>({...p,id:i+1}));
+let cart=JSON.parse(localStorage.getItem('jez_cart_v7')||'[]');
+let wallet=parseFloat(localStorage.getItem('jez_wallet_v7')||'0');
+let points=parseInt(localStorage.getItem('jez_points_v7')||'0');
+let history=JSON.parse(localStorage.getItem('jez_history_v7')||'[]');
+let orders=JSON.parse(localStorage.getItem('jez_orders_v7')||'{}');
 let active='all', cats=['all','shoes','phones','fashion','electronics','watches','bags','accessories','home'];
 
 function initCats(){document.getElementById('cats').innerHTML=cats.map(c=>`<button class="${active===c?'active':''}" onclick="setCat('${c}')">${c.toUpperCase()}</button>`).join('');}
-function setCat(c){active=c;initCats();render(); history.push(c); localStorage.setItem('jez_history_v5',JSON.stringify(history.slice(-20))); renderAI();}
+function setCat(c){active=c;initCats();render(); history.push(c); localStorage.setItem('jez_history_v7',JSON.stringify(history.slice(-20))); renderAI();}
 function getFiltered(){let q=document.getElementById('search').value.toLowerCase();return products.filter(p=>(active==='all'||p.cat===active)&&p.name.toLowerCase().includes(q));}
-function nowPrice(p){return isFriday?Math.round(p.price*(1-p.disc/100)):p.price;}
-function render(){let list=getFiltered();document.getElementById('grid').innerHTML=list.map(p=>{let np=nowPrice(p);return `<div class="card" onclick="viewProduct(${p.id})"><span class="badge ${!isFriday?'hide':''}">-${p.disc}%</span><img src="${p.img}" loading="lazy"><div class="info"><h3>${p.name}</h3><div><span class="now">GH₵${np}</span>${isFriday?`<span class="old">GH₵${p.price}</span>`:''}</div><button onclick="event.stopPropagation();addCart(${p.id})">${isFriday?'GRAB DEAL':'ADD TO CART'}</button></div></div>`}).join('');updateAdmin(); updateWalletUI();}
-function renderAI(){let lastCat=history[history.length-1]||'shoes';let rec=products.filter(p=>p.cat===lastCat).slice(0,4);if(rec.length<4){rec=[...rec,...products.sort(()=>0.5-Math.random()).slice(0,4-rec.length)];}document.getElementById('aiReason').innerText=`AI: Because you viewed ${lastCat.toUpperCase()} - Contact 0598933259 for deals`;document.getElementById('aiGrid').innerHTML=rec.map(p=>`<div class="card"><span class="badge ${!isFriday?'hide':''}">AI PICK -${p.disc}%</span><img src="${p.img}"><div class="info"><h3>${p.name}</h3><span class="now">GH₵${nowPrice(p)}</span><button onclick="addCart(${p.id})">ADD - AI REC</button></div></div>`).join('');}
-function viewProduct(id){let p=products.find(x=>x.id===id);history.push(p.cat);localStorage.setItem('jez_history_v5',JSON.stringify(history));renderAI();}
-function smartSearch(){let q=document.getElementById('search').value.toLowerCase();let box=document.getElementById('suggest');if(q.length<2){box.style.display='none';return;}let matches=products.filter(p=>p.name.toLowerCase().includes(q)).slice(0,6);if(!matches.length){box.style.display='none';return;}box.innerHTML=matches.map(m=>`<div onclick="selectSuggest('${m.name}')">${m.name} - GH₵${nowPrice(m)} <small style="color:#888">AI</small></div>`).join('')+`<div style="background:var(--accent);color:#000;font-weight:800">🔍 Trending: ${cats[Math.floor(Math.random()*cats.length)]}</div>`;box.style.display='block';}
+function nowPrice(p){let d=new Date().getDay();let isF=d===5;return isF?Math.round(p.price*(1-p.disc/100)):p.price;}
+function render(){let isF=new Date().getDay()===5;let list=getFiltered();document.getElementById('grid').innerHTML=list.map(p=>{let np=nowPrice(p);return `<div class="card" onclick="viewProduct(${p.id})"><span class="badge ${!isF?'hide':''}">-${p.disc}%</span><img src="${p.img}" loading="lazy"><div class="info"><h3>${p.name}</h3><div><span class="now">GH₵${np}</span>${isF?`<span class="old">GH₵${p.price}</span>`:''}</div><button onclick="event.stopPropagation();addCart(${p.id})">ADD TO CART</button></div></div>`}).join('');updateAdmin(); updateWalletUI();}
+function renderAI(){let lastCat=history[history.length-1]||'shoes';let rec=products.filter(p=>p.cat===lastCat).slice(0,4);if(rec.length<4){rec=[...rec,...products.sort(()=>0.5-Math.random()).slice(0,4-rec.length)];}document.getElementById('aiReason').innerText=`AI: Because you viewed ${lastCat.toUpperCase()} - 0598933259`;document.getElementById('aiGrid').innerHTML=rec.map(p=>`<div class="card"><span class="badge">AI PICK</span><img src="${p.img}"><div class="info"><h3>${p.name}</h3><span class="now">GH₵${nowPrice(p)}</span><button onclick="addCart(${p.id})">ADD - AI</button></div></div>`).join('');}
+function viewProduct(id){let p=products.find(x=>x.id===id);history.push(p.cat);localStorage.setItem('jez_history_v7',JSON.stringify(history));renderAI();}
+function smartSearch(){let q=document.getElementById('search').value.toLowerCase();let box=document.getElementById('suggest');if(q.length<2){box.style.display='none';return;}let matches=products.filter(p=>p.name.toLowerCase().includes(q)).slice(0,6);if(!matches.length){box.style.display='none';return;}box.innerHTML=matches.map(m=>`<div onclick="selectSuggest('${m.name}')">${m.name} - GH₵${nowPrice(m)}</div>`).join('');box.style.display='block';}
 function selectSuggest(name){document.getElementById('search').value=name;document.getElementById('suggest').style.display='none';render();}
 function addCart(id){let ex=cart.find(c=>c.id===id);if(ex)ex.qty++;else{let pr=products.find(p=>p.id===id);cart.push({id:pr.id,name:pr.name,price:nowPrice(pr),orig:pr.price,qty:1,img:pr.img});}save();openBox('cartBox');}
-function save(){localStorage.setItem('jez_v5_FINAL',JSON.stringify(products));localStorage.setItem('jez_cart_v5',JSON.stringify(cart));localStorage.setItem('jez_wallet_v5',wallet);localStorage.setItem('jez_points_v5',points);localStorage.setItem('jez_orders_v5',JSON.stringify(orders));updateCart();}
-function updateCart(){let c=0,t=0,html="";cart.forEach(it=>{c+=it.qty;t+=it.price*it.qty;html+=`<div style="display:flex;gap:8px;margin:8px 0;border-bottom:1px solid #222;padding-bottom:6px"><img src="${it.img}" style="width:44px;height:44px;border-radius:6px"><div><b style="font-size:11px">${it.name}</b><br>GH₵${it.price} x ${it.qty} <span style="color:red;cursor:pointer" onclick="del(${it.id})"> Remove</span></div></div>`});let useW=document.getElementById('useWallet')?.checked;let finalTotal=useW?Math.max(0,t-wallet):t;document.getElementById('count').innerText=c;document.getElementById('total').innerText=finalTotal;document.getElementById('cartList').innerHTML=html||"Empty - AI is watching";document.querySelectorAll('.wBal').forEach(e=>e.innerText=wallet);updateWalletUI();}
+function save(){localStorage.setItem('jez_v7_final_100',JSON.stringify(products));localStorage.setItem('jez_cart_v7',JSON.stringify(cart));localStorage.setItem('jez_wallet_v7',wallet);localStorage.setItem('jez_points_v7',points);localStorage.setItem('jez_orders_v7',JSON.stringify(orders));updateCart();}
+function updateCart(){let c=0,t=0,html="";cart.forEach(it=>{c+=it.qty;t+=it.price*it.qty;html+=`<div style="display:flex;gap:8px;margin:8px 0;border-bottom:1px solid #222;padding-bottom:6px"><img src="${it.img}" style="width:44px;height:44px;border-radius:6px"><div><b style="font-size:11px">${it.name}</b><br>GH₵${it.price} x ${it.qty} <span style="color:red;cursor:pointer" onclick="del(${it.id})"> Remove</span></div></div>`});let useW=document.getElementById('useWallet')?.checked;let finalTotal=useW?Math.max(0,t-wallet):t;document.getElementById('count').innerText=c;document.getElementById('total').innerText=finalTotal;document.getElementById('cartList').innerHTML=html||"Empty bag";document.querySelectorAll('.wBal').forEach(e=>e.innerText=wallet);updateWalletUI();}
 function del(id){cart=cart.filter(c=>c.id!==id);save();}
-function openBox(id){
-  if(id==='adminBox'){
-    let pass=prompt('Enter Admin Password:');
-    if(pass!=='jezreel123'){alert('Wrong password!');return;}
-  }
-  document.getElementById(id).classList.add('show');document.getElementById('overlay').classList.add('show');
-}
+function openBox(id){if(id==='adminBox'){let pass=prompt('Enter Admin Password (owner only):');if(pass!=='jezreel123'){alert('Wrong! Only 0598933259');return;}}document.getElementById(id).classList.add('show');document.getElementById('overlay').classList.add('show');}
 function closeAll(){document.querySelectorAll('#cartBox,#adminBox,#trackBox,#walletBox,#popup').forEach(e=>e.classList.remove('show'));document.getElementById('overlay').classList.remove('show');document.getElementById('suggest').style.display='none';}
 function addProd(){let n=document.getElementById('pName').value,pr=parseFloat(document.getElementById('pPrice').value),dc=parseFloat(document.getElementById('pDisc').value)||40,cat=document.getElementById('pCat').value||'general',img=document.getElementById('pImg').value||'https://via.placeholder.com/400';if(!n||!pr)return alert('Need name & price');products.unshift({id:Date.now(),name:n,price:pr,disc:dc,cat:cat.toLowerCase(),img:img});save();render();}
 function updateAdmin(){document.getElementById('adminList').innerHTML=products.map(p=>`<div style="display:flex;justify-content:space-between;font-size:11px;padding:5px 0;border-bottom:1px solid #222"><span>${p.name.slice(0,24)}</span><span style="color:red;cursor:pointer" onclick="delProd(${p.id})">X</span></div>`).join('');}
 function delProd(id){products=products.filter(p=>p.id!==id);save();render();}
 function updateWalletUI(){document.getElementById('walletBal').innerText=wallet;document.getElementById('walletBal2').innerText=wallet;document.getElementById('walletBal3').innerText=wallet;document.getElementById('points').innerText=points;document.getElementById('points2').innerText=points;}
-function topUpWallet(){let amt=parseFloat(document.getElementById('addWallet').value);if(!amt)return alert('Enter amount');wallet+=amt;save();alert('Wallet GH₵'+amt+' added');updateWalletUI();}
-function redeemPoints(){if(points<100)return alert('Need 100 points');points-=100;wallet+=10;save();alert('Redeemed 100 pts = GH₵10');updateWalletUI();}
-function pay(){if(!cart.length)return alert('Empty');let email=document.getElementById('email').value;if(!email)return alert('Enter customer email');let total=parseFloat(document.getElementById('total').innerText);let useW=document.getElementById('useWallet').checked;let realTotal=cart.reduce((s,i)=>s+i.price*i.qty,0);let walletUsed=useW?Math.min(wallet,realTotal):0;let id='JEZ-'+Date.now().toString().slice(-6);let cashback=Math.round(realTotal*0.05);orders[id]={total:realTotal,paid:total,walletUsed:cashback,status:0,time:Date.now(),email};wallet=wallet-walletUsed+cashback;points+=Math.floor(realTotal);let h=PaystackPop.setup({key:'pk_test_xxxx',email:email,amount:total*100,currency:'GHS',channels:['card','mobile_money','bank'],ref:id,callback:function(r){alert('Success! Tracking ID: '+id+' Receipt to '+email+' Cashback GH₵'+cashback+' + Points. WhatsApp 0598933259');cart=[];save();closeAll();},onClose:function(){}});if(total>0){h.openIframe();}else{alert('Paid with wallet! Tracking ID: '+id);cart=[];save();closeAll();}}
-function trackOrder(){let id=document.getElementById('trackInput').value.trim();let o=orders[id];let box=document.getElementById('trackResult');if(!o){box.innerHTML='<p style="color:red">Order not found</p>';return;}let steps=['Order Placed','Payment Confirmed','Packed','Out for Delivery','Delivered'];let elapsed=Math.floor((Date.now()-o.time)/60000);let cur=Math.min(4,Math.floor(elapsed/2));let html=`<p><b>ID:</b> ${id}<br><b>Total:</b> GH₵${o.total}<br><b>Email:</b> ${o.email}</p>`+steps.map((s,i)=>`<div class="track-step"><div class="dot ${i<=cur?'active':''}">${i<=cur?'✓':i+1}</div><div><b style="font-size:12px">${s}</b><br><small style="color:#888">${i<=cur?'Done':'Pending'}</small></div></div>`).join('')+`<br><button class="btn gold" onclick="window.open('https://wa.me/233598933259?text=Track ${id}','_blank')">WHATSAPP 0598933259 ABOUT THIS ORDER</button>`;box.innerHTML=html;}
-function orderWA(){let msg=`JEZREEL'S HUB AI Order:%0A`+cart.map(c=>`- ${c.name} x${c.qty}=GH₵${c.price*c.qty}`).join('%0A')+`%0ATotal GH₵${document.getElementById('total').innerText}%0AEmail:${document.getElementById('email').value}%0AMoMo:${document.getElementById('momo').value}%0AContact Seller: 0598933259 leonjezreel3@gmail.com`;window.open(`https://wa.me/233598933259?text=${msg}`,'_blank');}
-function startTimer(){let end=new Date();end.setHours(23,59,59,999);setInterval(()=>{let diff=end-new Date();let h=Math.floor(diff/3600000),m=Math.floor(diff%3600000/60000),s=Math.floor(diff%60000/1000);document.getElementById('timer').innerHTML=isFriday?`<div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:8px 12px"><b style="color:var(--accent)">${String(h).padStart(2,'0')}</b> HRS</div><div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:8px 12px"><b style="color:var(--accent)">${String(m).padStart(2,'0')}</b> MIN</div><div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:8px 12px"><b style="color:var(--accent)">${String(s).padStart(2,'0')}</b> SEC</div>`:`<div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:8px 12px"><b>AI ACTIVE - ${dayName}</b></div>`;let d=document.getElementById('popTimer');if(d)d.innerText=isFriday?`${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')} LEFT`:`CONTACT 0598933259 FOR DEALS`;},1000);}
-initCats();render();renderAI();updateCart();startTimer();
+function topUpWallet(){let amt=parseFloat(document.getElementById('addWallet').value);if(!amt)return alert('Enter amount');wallet+=amt;save();alert('Wallet GH₵'+amt);updateWalletUI();}
+function redeemPoints(){if(points<100)return alert('Need 100 points');points-=100;wallet+=10;save();alert('Redeemed 100=GH₵10');updateWalletUI();}
+function pay(){if(!cart.length)return alert('Empty');let email=document.getElementById('email').value;if(!email)return alert('Enter email');let total=parseFloat(document.getElementById('total').innerText);let useW=document.getElementById('useWallet').checked;let realTotal=cart.reduce((s,i)=>s+i.price*i.qty,0);let walletUsed=useW?Math.min(wallet,realTotal):0;let id='JEZ-'+Date.now().toString().slice(-6);let cashback=Math.round(realTotal*0.05);orders[id]={total:realTotal,paid:total,walletUsed:cashback,status:0,time:Date.now(),email};wallet=wallet-walletUsed+cashback;points+=Math.floor(realTotal);let h=PaystackPop.setup({key:'pk_test_xxxx',email:email,amount:total*100,currency:'GHS',channels:['card','mobile_money','bank'],ref:id,callback:function(r){alert('Success! Tracking ID: '+id+' Cashback GH₵'+cashback+' | Contact 0598933259');cart=[];save();closeAll();},onClose:function(){}});if(total>0){h.openIframe();}else{alert('Paid with wallet! Tracking ID: '+id);cart=[];save();closeAll();}}
+function trackOrder(){let id=document.getElementById('trackInput').value.trim();let o=orders[id];let box=document.getElementById('trackResult');if(!o){box.innerHTML='<p style="color:red">Order not found</p>';return;}let steps=['Order Placed','Payment Confirmed','Packed','Out for Delivery','Delivered'];let elapsed=Math.floor((Date.now()-o.time)/60000);let cur=Math.min(4,Math.floor(elapsed/2));let html=`<p><b>ID:</b> ${id}<br><b>Total:</b> GH₵${o.total}</p>`+steps.map((s,i)=>`<div class="track-step"><div class="dot ${i<=cur?'active':''}">${i<=cur?'✓':i+1}</div><div><b style="font-size:12px">${s}</b></div></div>`).join('')+`<br><button class="btn gold" onclick="window.open('https://wa.me/233598933259?text=Track ${id}','_blank')">WHATSAPP 0598933259</button>`;box.innerHTML=html;}
+function orderWA(){let msg=`JEZREEL'S HUB 100 Order:%0A`+cart.map(c=>`- ${c.name} x${c.qty}=GH₵${c.price*c.qty}`).join('%0A')+`%0ATotal GH₵${document.getElementById('total').innerText}%0AEmail:${document.getElementById('email').value}%0AMoMo:${document.getElementById('momo').value}`;window.open(`https://wa.me/233598933259?text=${msg}`,'_blank');}
+
+// Auto fix broken images
+document.addEventListener('error', function(e){ if(e.target.tagName==='IMG'){ e.target.src='https://via.placeholder.com/400x400?text=JEZREEL+HUB'; } }, true);
+
+initCats();render();renderAI();updateCart();
 setTimeout(()=>{document.getElementById('popup').classList.add('show');document.getElementById('overlay').classList.add('show');},2500);
 </script>
 </body>
-  </html>
+</html>
