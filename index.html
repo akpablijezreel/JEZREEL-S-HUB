@@ -233,7 +233,7 @@ let stock=[
 {name:"VR Headset",price:1200,disc:35,cat:"electronics",img:"https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?w=500"}
 ];
 
-let products=JSON.parse(localStorage.getItem('jez_v5_FINAL')||JSON.stringify(stock)).map((p,i)=>({...p,id:i+1}));
+let products=JSON.parse(localStorage.getItem('jez_v6_100')||JSON.stringify(stock))
 let cart=JSON.parse(localStorage.getItem('jez_cart_v5')||'[]');
 let wallet=parseFloat(localStorage.getItem('jez_wallet_v5')||'0');
 let points=parseInt(localStorage.getItem('jez_points_v5')||'0');
